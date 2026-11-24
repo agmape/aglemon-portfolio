@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aglemon Flores Ribeiro — Senior Digital Analytics & Tracking Specialist</title>
+<meta name="description" content="Senior Digital Analytics & Tracking Specialist. GA4, Google Tag Manager, BigQuery, Looker Studio, Meta Pixel, Google Ads. Measurement planning, event architecture and data-driven performance.">
+<meta property="og:title" content="Aglemon Flores Ribeiro — Digital Analytics & Tracking">
+<meta property="og:description" content="GA4 · GTM · BigQuery · Looker Studio · Meta Pixel · Google Ads. I make every click count.">
+<meta property="og:image" content="/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0E13; --ink-2:#11171F; --ink-3:#1A222C; --line:#26303B;
+  --paper:#F4F6F2; --muted:#8A94A0; --lime:#C8FF3D; --lime-dim:rgba(200,255,61,.12);
+  --display:'Inter Tight',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--display);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(#1C232C 1px,transparent 1px);background-size:40px 40px;opacity:.9}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.lime{color:var(--lime)}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--lime);transform-origin:0 50%;transform:scaleX(0);z-index:100}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,14,19,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.01em}
+.brand img{width:38px;height:38px}
+.nav-links{display:flex;gap:28px;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--paper)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px;font-family:var(--mono);font-size:12px}
+.lang button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:99px;cursor:pointer;font:inherit}
+.lang button.on{background:var(--paper);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:99px;font-weight:600;font-size:16px;transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--paper)}
+.btn-sm{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-grid>*{min-width:0}
+.eyebrow .mono{line-height:1.5}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.live{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 var(--lime);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(200,255,61,.6)}80%,100%{box-shadow:0 0 0 14px rgba(200,255,61,0)}}
+h1{font-size:clamp(46px,6.4vw,92px);line-height:.95;letter-spacing:-.045em;font-weight:800}
+h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .line span{display:inline-block;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.loaded h1 .line span{transform:none}
+.loaded h1 .line:nth-child(2) span{transition-delay:.12s}
+.loaded h1 .line:nth-child(3) span{transition-delay:.24s}
+.hero p.lead{font-size:clamp(18px,1.6vw,21px);color:#C4CBD3;max-width:560px;margin:30px 0 36px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.reel{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2);aspect-ratio:16/9;box-shadow:0 40px 120px -40px rgba(200,255,61,.25)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reel-tag{position:absolute;top:14px;left:14px;display:flex;gap:8px;align-items:center;background:rgba(10,14,19,.75);backdrop-filter:blur(6px);padding:7px 12px;border-radius:99px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.reel-sound{position:absolute;bottom:14px;right:14px;background:rgba(10,14,19,.75);border:1px solid var(--line);color:var(--paper);border-radius:99px;padding:8px 14px;font-family:var(--mono);font-size:11px;cursor:pointer}
+.console{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);padding:14px 18px;font-family:var(--mono);font-size:13px;height:118px;overflow:hidden;position:relative}
+.console .row{display:flex;gap:12px;white-space:nowrap;opacity:0;transform:translateY(8px);animation:row .5s forwards}
+.console .row .ok{color:var(--lime)}
+.console .row .ev{color:#C4CBD3}
+.console::after{content:"";position:absolute;left:0;right:0;top:0;height:40px;background:linear-gradient(var(--ink-2),transparent)}
+@keyframes row{to{opacity:1;transform:none}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);padding:22px 0;overflow:hidden;position:relative;z-index:1;background:var(--ink)}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:marq 38s linear infinite}
+.marquee span{font-size:28px;font-weight:700;letter-spacing:-.02em;color:#5D6773;display:flex;align-items:center;gap:56px}
+.marquee span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(90px,12vw,160px) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
+h2{font-size:clamp(38px,5.2vw,72px);line-height:1;letter-spacing:-.04em;font-weight:800;max-width:900px}
+.sec-head p{color:var(--muted);max-width:380px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-big{font-size:clamp(26px,2.9vw,40px);line-height:1.2;letter-spacing:-.025em;font-weight:600}
+.about-big .w{opacity:.18;transition:opacity .3s}
+.about-big .w.on{opacity:1}
+.about-side p{color:#C4CBD3;margin-bottom:20px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:32px}
+.facts div{background:var(--ink);padding:20px}
+.facts b{display:block;font-size:17px;margin-top:4px}
+
+/* impact */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--ink-2);position:relative;overflow:hidden}
+.stat .num{font-size:clamp(46px,4.6vw,66px);font-weight:900;letter-spacing:-.05em;line-height:1}
+.stat .bar{height:4px;background:var(--line);border-radius:4px;margin:22px 0 18px;overflow:hidden}
+.stat .bar i{display:block;height:100%;width:0;background:var(--lime);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.stat.in .bar i{width:var(--w)}
+.stat h3{font-size:19px;font-weight:600}
+.stat p{color:var(--muted);font-size:14px;margin-top:6px}
+
+/* process (sticky horizontal) */
+.process{padding:0}
+.process-pin{height:340vh;position:relative}
+.process-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.process-track{display:flex;gap:24px;padding-left:var(--pad);will-change:transform}
+.step{flex:0 0 min(440px,82vw);border:1px solid var(--line);border-radius:24px;padding:36px;background:var(--ink-2);min-height:360px;display:flex;flex-direction:column}
+.step .n{font-family:var(--mono);color:var(--lime);font-size:14px}
+.step h3{font-size:34px;letter-spacing:-.03em;line-height:1.05;margin:auto 0 16px;font-weight:700}
+.step p{color:#C4CBD3}
+.step code{font-family:var(--mono);font-size:13px;color:var(--lime);background:var(--lime-dim);padding:3px 7px;border-radius:6px}
+.process-head{margin-bottom:48px}
+
+/* timeline */
+.timeline{position:relative;padding-left:48px}
+.timeline .rail{position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline .rail i{position:absolute;inset:0 0 auto 0;height:0;background:var(--lime);box-shadow:0 0 18px var(--lime)}
+.job{position:relative;display:grid;grid-template-columns:220px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job::before{content:"";position:absolute;left:-43px;top:44px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--line);transition:all .4s}
+.job.in::before{border-color:var(--lime);background:var(--lime);box-shadow:0 0 0 6px var(--lime-dim)}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:8px}
+.job h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.025em;font-weight:700;line-height:1.15}
+.job .co{color:var(--lime);font-weight:600;margin:4px 0 14px}
+.job ul{list-style:none;display:grid;gap:8px;color:#C4CBD3}
+.job li{padding-left:22px;position:relative}
+.job li::before{content:"→";position:absolute;left:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:#C4CBD3}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--ink-2);transition:border-color .3s,transform .3s}
+.skill:hover{border-color:var(--lime);transform:translateY(-4px)}
+.skill.wide{grid-column:span 2}
+.skill h3{font-size:22px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.skill h3 .ico{width:36px;height:36px;border-radius:10px;background:var(--lime-dim);display:grid;place-items:center;color:var(--lime);font-family:var(--mono);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:15px}
+.chip.hot{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu div{border-top:2px solid var(--line);padding-top:22px}
+.edu b{display:block;font-size:20px;margin:8px 0 6px;letter-spacing:-.01em}
+.edu p{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{text-align:center;padding-bottom:80px}
+.contact h2{margin:0 auto;font-size:clamp(48px,9vw,140px);letter-spacing:-.055em;line-height:.92}
+.contact p.lead{color:#C4CBD3;max-width:560px;margin:28px auto 40px;font-size:20px}
+.contact-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:14px;margin-top:56px;text-align:left}
+.c-card{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--ink-2);transition:border-color .25s,transform .25s;display:block}
+.c-card:hover{border-color:var(--lime);transform:translateY(-3px)}
+.c-card b{display:block;margin-top:8px;font-size:15px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding:30px 0;position:relative;z-index:1}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .skills{grid-template-columns:1fr}
+  .skill.wide{grid-column:auto}
+  .job{grid-template-columns:1fr;gap:8px}
+  .edu,.contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .stats,.edu,.contact-grid{grid-template-columns:1fr}
+  .nav-right .btn{display:none}
+  .facts{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  h1 .line span{transform:none}
+  .process-pin{height:auto}.process-sticky{position:static;height:auto;padding:100px 0}
+  .process-track{flex-wrap:wrap;padding-right:var(--pad)}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><img src="/assets/logo.svg" alt="AF logo"><span>Aglemon Flores</span></a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#impact" data-i18n="nav_impact">Impact</a>
+      <a href="#experience" data-i18n="nav_exp">Experience</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" class="on">EN</button><button data-lang="pt">PT</button>
+      </div>
+      <a class="btn btn-lime btn-sm" href="/assets/Aglemon_Flores_Ribeiro_CV.pdf" download data-i18n="cv">Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="live"></span><span class="mono" data-i18n="eyebrow">Open to new opportunities · São Paulo, Brazil · Remote</span></div>
+      <h1>
+        <span class="line"><span data-i18n="h1a">I make every</span></span>
+        <span class="line"><span data-i18n="h1b">click <em class="lime" style="font-style:normal">count.</em></span></span>
+      </h1>
+      <p class="lead" data-i18n="lead">Senior Digital Analytics & Tracking Specialist. I design measurement plans, build GA4 and Google Tag Manager implementations, and turn messy data into dashboards that decision-makers actually trust.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-lime" href="#contact" data-i18n="cta1">Let's talk →</a>
+        <a class="btn btn-ghost" href="#experience" data-i18n="cta2">See experience</a>
+      </div>
+    </div>
+    <div class="rv in">
+      <div class="reel">
+        <video id="reel" src="/assets/reel.mp4" poster="/assets/reel-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="reel-tag"><span class="live" style="width:7px;height:7px"></span>SHOWREEL · 0:28</div>
+        <button class="reel-sound" id="replay" data-i18n="replay">↺ Replay</button>
+      </div>
+      <div class="console" id="console" aria-hidden="true"></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Google Analytics 4</span><span>Google Tag Manager</span><span>BigQuery</span><span>Looker Studio</span><span>Power BI</span><span>Meta Pixel</span><span>Google Ads</span><span>Tableau</span><span>dataLayer</span><span>JavaScript</span><span>Hotjar</span>
+    <span>Google Analytics 4</span><span>Google Tag Manager</span><span>BigQuery</span><span>Looker Studio</span><span>Power BI</span><span>Meta Pixel</span><span>Google Ads</span><span>Tableau</span><span>dataLayer</span><span>JavaScript</span><span>Hotjar</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="mono rv" style="margin-bottom:24px">01 — <span data-i18n="nav_about">About</span></div>
+      <p class="about-big" id="scrub" data-i18n="about_big">Ten years turning marketing questions into reliable data. From tagging plans and event architecture to executive dashboards, I make sure the numbers your team decides on are the right ones.</p>
+    </div>
+    <div class="about-side">
+      <p class="rv" data-i18n="about_p1">I've worked with enterprise and mid-market organizations, including CI&T, NTT DATA and Banco BV, and consulted for clients like Bradesco and Itaú. My focus: measurement planning, analytics governance, data validation and performance optimization.</p>
+      <p class="rv d1" data-i18n="about_p2">I sit between marketing, product, UX and engineering, writing developer-facing documentation, standardizing event naming, and translating data into decisions.</p>
+      <div class="facts rv d2">
+        <div><span class="mono" data-i18n="f_base">Based in</span><b>Santo André, SP — Brazil</b></div>
+        <div><span class="mono" data-i18n="f_lang">Languages</span><b data-i18n="f_lang_v">English · Portuguese · Spanish</b></div>
+        <div><span class="mono" data-i18n="f_edu">Education</span><b data-i18n="f_edu_v">B.A. Business Administration</b></div>
+        <div><span class="mono" data-i18n="f_work">Work mode</span><b data-i18n="f_work_v">Remote · Hybrid · On-site</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv"><span class="mono" style="display:block;margin-bottom:18px">02 — <span data-i18n="nav_impact">Impact</span></span><span data-i18n="impact_h">Numbers that moved.</span></h2>
+      <p class="rv d1" data-i18n="impact_p">Results from analytics-led optimization across banking, media and tech.</p>
+    </div>
+    <div class="stats">
+      <div class="stat rv" style="--w:72%"><div class="num lime"><span class="count" data-to="25" data-pre="+">0</span>%</div><div class="bar"><i></i></div><h3 data-i18n="s1h">Conversion rate</h3><p data-i18n="s1p">SEM optimization through website analytics · Banco BV</p></div>
+      <div class="stat rv d1" style="--w:80%"><div class="num"><span class="count" data-to="30" data-pre="+">0</span>%</div><div class="bar"><i></i></div><h3 data-i18n="s2h">Lead generation</h3><p data-i18n="s2p">Leading a team of marketing analysts · Banco BV</p></div>
+      <div class="stat rv d2" style="--w:80%"><div class="num"><span class="count" data-to="30" data-pre="+">0</span>%</div><div class="bar"><i></i></div><h3 data-i18n="s3h">Leads via inbound</h3><p data-i18n="s3p">Inbound marketing strategy · Universo Online (UOL)</p></div>
+      <div class="stat rv d3" style="--w:100%"><div class="num"><span class="count" data-to="10">0</span>+</div><div class="bar"><i></i></div><h3 data-i18n="s4h">Years</h3><p data-i18n="s4p">in digital marketing, analytics and tracking</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-pin" id="pin">
+    <div class="process-sticky">
+      <div class="wrap process-head">
+        <span class="mono">03 — <span data-i18n="proc_k">How I work</span></span>
+        <h2 style="margin-top:18px" data-i18n="proc_h">From question to trusted dashboard.</h2>
+      </div>
+      <div class="process-track" id="track">
+        <div class="step"><span class="n">01 / 05</span><h3 data-i18n="p1h">Measurement plan</h3><p data-i18n="p1p">Map business goals to KPIs, events and parameters. One source of truth for marketing, product and dev.</p></div>
+        <div class="step"><span class="n">02 / 05</span><h3 data-i18n="p2h">Event architecture</h3><p data-i18n="p2p">Standardized naming and a clean <code>dataLayer</code> spec, documented for developers.</p></div>
+        <div class="step"><span class="n">03 / 05</span><h3 data-i18n="p3h">GTM implementation</h3><p data-i18n="p3p">Tags, triggers and variables for GA4, Google Ads, Meta Pixel and Hotjar, including e-commerce tracking.</p></div>
+        <div class="step"><span class="n">04 / 05</span><h3 data-i18n="p4h">QA & validation</h3><p data-i18n="p4p">JavaScript debugging, tag-firing tests and data-integrity checks before anything reaches a report.</p></div>
+        <div class="step"><span class="n">05 / 05</span><h3 data-i18n="p5h">Dashboards & insight</h3><p data-i18n="p5p">BigQuery, Looker Studio and Power BI reporting with ROI, ROAS and CAC, plus recommendations people can act on.</p></div>
+        <div style="flex:0 0 var(--pad)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv"><span class="mono" style="display:block;margin-bottom:18px">04 — <span data-i18n="nav_exp">Experience</span></span><span data-i18n="exp_h">Where I've delivered.</span></h2>
+      <a class="btn btn-ghost rv d1" href="/assets/Aglemon_Flores_Ribeiro_CV.pdf" download data-i18n="cv_full">Full CV (PDF) ↓</a>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="rail"><i id="railfill"></i></div>
+
+      <article class="job rv"><div class="when">Oct 2024 — Mar 2025</div><div>
+        <h3>Senior Data Specialist</h3><div class="co">CI&T</div>
+        <ul><li data-i18n="j1a">Led advanced Google Tag Manager implementations to improve measurement accuracy and campaign performance.</li>
+        <li data-i18n="j1b">Implemented custom events and e-commerce tracking in GA4 across the full user journey.</li>
+        <li data-i18n="j1c">Integrated Meta Pixel and Hotjar; delivered strategic recommendations, experimentation support and tracking documentation with GDPR/CCPA in mind.</li></ul>
+        <div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">E-commerce</span><span class="tag">Meta Pixel</span><span class="tag">Hotjar</span><span class="tag">JavaScript</span></div>
+      </div></article>
+
+      <article class="job rv"><div class="when">Jul 2022 — Sep 2023</div><div>
+        <h3>Web Analytics Manager · GTM Tagging Specialist</h3><div class="co">NTT DATA</div>
+        <ul><li data-i18n="j2a">Implemented advanced tracking, event and conversion frameworks to monitor user behavior and optimize funnels.</li>
+        <li data-i18n="j2b">Managed tag deployment and tag mapping in GTM; fixed tracking issues with rigorous testing for data integrity.</li>
+        <li data-i18n="j2c">Consulted for internal teams and clients including Bradesco and Itaú; standardized event naming and documentation across projects.</li></ul>
+        <div class="tags"><span class="tag">GTM</span><span class="tag">Conversion tracking</span><span class="tag">Governance</span><span class="tag">Bradesco</span><span class="tag">Itaú</span></div>
+      </div></article>
+
+      <article class="job rv"><div class="when">2021 — 2022</div><div>
+        <h3>Web Analytics / Data Analyst</h3><div class="co">Math Group · Banco BV</div>
+        <ul><li data-i18n="j3a">Analyzed website data and supported SEM optimization that contributed to a 25% increase in conversion rate.</li>
+        <li data-i18n="j3b">Led a team of marketing analysts and helped drive a 30% increase in lead generation.</li>
+        <li data-i18n="j3c">Supported Google Analytics setup and optimized tagging structures for more accurate reporting.</li></ul>
+        <div class="tags"><span class="tag">Google Analytics</span><span class="tag">SEM</span><span class="tag">Team lead</span><span class="tag">CRO</span></div>
+      </div></article>
+
+      <article class="job rv"><div class="when">2020 — 2021</div><div>
+        <h3>Web Analytics / Tagging Analyst BI</h3><div class="co">Nerdweb</div>
+        <ul><li data-i18n="j4a">Owned end-to-end analysis, mapping, implementation and testing of tracking via Google Tag Manager.</li>
+        <li data-i18n="j4b">Configured custom events and captured structured data through the dataLayer; validated tag firing with debugging.</li>
+        <li data-i18n="j4c">Fixed traffic-drop issues, implemented conversion tracking and automated reporting.</li></ul>
+        <div class="tags"><span class="tag">dataLayer</span><span class="tag">GTM</span><span class="tag">Debugging</span><span class="tag">Automation</span></div>
+      </div></article>
+
+      <article class="job rv"><div class="when">2017 — 2019</div><div>
+        <h3>Marketing Analyst</h3><div class="co">AWD Group</div>
+        <ul><li data-i18n="j5a">Defined and monitored KPIs and OKRs across marketing and growth initiatives.</li>
+        <li data-i18n="j5b">Planned and optimized paid and organic campaigns on Google Ads and Meta Ads; SEO/SEM and inbound strategy.</li>
+        <li data-i18n="j5c">Worked with WooCommerce, RD Station, Google Merchant Center, Hotjar and GTM.</li></ul>
+        <div class="tags"><span class="tag">KPIs / OKRs</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">SEO</span></div>
+      </div></article>
+
+      <article class="job rv"><div class="when">2015 — 2017</div><div>
+        <h3>Marketing Analyst</h3><div class="co">Universo Online (UOL)</div>
+        <ul><li data-i18n="j6a">Optimized Google AdWords, Google Analytics and email marketing workflows.</li>
+        <li data-i18n="j6b">Helped increase lead generation by 30% through inbound marketing; managed ad bidding and campaign execution.</li></ul>
+        <div class="tags"><span class="tag">AdWords</span><span class="tag">Google Analytics</span><span class="tag">Inbound</span></div>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv"><span class="mono" style="display:block;margin-bottom:18px">05 — <span data-i18n="nav_skills">Skills</span></span><span data-i18n="skills_h">The toolkit.</span></h2>
+    </div>
+    <div class="skills">
+      <div class="skill wide rv"><h3><span class="ico">{ }</span><span data-i18n="sk1">Digital Analytics</span></h3><div class="chips"><span class="chip hot">GA4</span><span class="chip hot">Google Tag Manager</span><span class="chip">dataLayer</span><span class="chip">Custom events</span><span class="chip">Conversion tracking</span><span class="chip">E-commerce tracking</span><span class="chip">Debugging & QA</span><span class="chip">Data validation</span><span class="chip">Measurement planning</span></div></div>
+      <div class="skill rv d1"><h3><span class="ico">▤</span><span data-i18n="sk2">Reporting & BI</span></h3><div class="chips"><span class="chip hot">BigQuery</span><span class="chip">Looker Studio</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">KPI dashboards</span></div></div>
+      <div class="skill rv"><h3><span class="ico">↗</span><span data-i18n="sk3">Marketing & Media</span></h3><div class="chips"><span class="chip">Google Ads</span><span class="chip">Meta Pixel</span><span class="chip">SEM</span><span class="chip">SEO</span><span class="chip">Remarketing</span><span class="chip">ROI · ROAS · CAC</span></div></div>
+      <div class="skill rv d1"><h3><span class="ico">&lt;/&gt;</span><span data-i18n="sk4">Technical</span></h3><div class="chips"><span class="chip">JavaScript debugging</span><span class="chip">HTML / CSS</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">SQL Server</span></div></div>
+      <div class="skill rv d2"><h3><span class="ico">⇄</span><span data-i18n="sk5">Collaboration</span></h3><div class="chips"><span class="chip" data-i18n="sk5a">Developer documentation</span><span class="chip" data-i18n="sk5b">Stakeholder communication</span><span class="chip">Confluence</span><span class="chip">Miro</span><span class="chip">GDPR · CCPA</span></div></div>
+    </div>
+
+    <div class="edu" style="margin-top:100px">
+      <div class="rv"><span class="mono" data-i18n="e1k">Bachelor's degree · 2009–2014</span><b data-i18n="e1">Business Administration</b><p>Universidade Metodista de São Paulo</p></div>
+      <div class="rv d1"><span class="mono" data-i18n="e2k">Advanced course · 2018–2019</span><b data-i18n="e2">Business English</b><p>Cambridge International College · Sydney, Australia</p></div>
+      <div class="rv d2"><span class="mono" data-i18n="e3k">High school · 2004–2007</span><b data-i18n="e3">High School Diploma</b><p>Thomas Worthington High School · Columbus, Ohio, USA</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="mono rv" style="margin-bottom:28px">06 — <span data-i18n="nav_contact">Contact</span></div>
+    <h2 class="rv"><span data-i18n="c_h1">Let's measure</span><br><span class="lime" data-i18n="c_h2">what matters.</span></h2>
+    <p class="lead rv d1" data-i18n="c_p">Hiring for digital analytics, tracking or marketing data? I'm available for full-time roles and consulting projects.</p>
+    <a class="btn btn-lime rv d2" href="mailto:digitalfistpower@gmail.com?subject=Opportunity%20for%20Aglemon" data-i18n="c_btn">Send me an email →</a>
+    <div class="contact-grid">
+      <a class="c-card rv" href="mailto:digitalfistpower@gmail.com"><span class="mono">E-mail</span><b>digitalfistpower@gmail.com</b></a>
+      <a class="c-card rv d1" href="https://www.linkedin.com/in/aglemon" target="_blank" rel="noopener"><span class="mono">LinkedIn</span><b>linkedin.com/in/aglemon</b></a>
+      <a class="c-card rv d2" href="https://wa.me/5511948132388" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><b>+55 11 94813-2388</b></a>
+      <a class="c-card rv d3" href="/assets/Aglemon_Flores_Ribeiro_CV.pdf" download><span class="mono" data-i18n="c_cv_k">Résumé</span><b data-i18n="c_cv">Download CV (PDF)</b></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 Aglemon Flores Ribeiro</span><span class="mono" style="text-transform:none">dataLayer.push({ event: 'thanks_for_visiting' })</span></div>
+</footer>
+
+<script>
+const PT = {
+  nav_about:"Sobre", nav_impact:"Impacto", nav_exp:"Experiência", nav_skills:"Skills", nav_contact:"Contato",
+  cv:"Baixar CV", cv_full:"CV completo (PDF) ↓", replay:"↺ Repetir",
+  eyebrow:"Aberto a novas oportunidades · São Paulo · Remoto",
+  h1a:"Faço cada clique", h1b:'<em class="lime" style="font-style:normal">contar.</em>',
+  lead:"Especialista Sênior em Digital Analytics e Tracking. Crio planos de mensuração, implemento GA4 e Google Tag Manager e transformo dados bagunçados em dashboards em que a liderança realmente confia.",
+  cta1:"Vamos conversar →", cta2:"Ver experiência",
+  about_big:"Dez anos transformando perguntas de marketing em dados confiáveis. Do plano de tagueamento e arquitetura de eventos aos dashboards executivos, garanto que os números usados nas decisões sejam os certos.",
+  about_p1:"Atuei em empresas enterprise e mid-market, como CI&T, NTT DATA e Banco BV, e prestei consultoria para clientes como Bradesco e Itaú. Meu foco: plano de mensuração, governança de analytics, validação de dados e otimização de performance.",
+  about_p2:"Faço a ponte entre marketing, produto, UX e engenharia: escrevo documentação para desenvolvedores, padronizo nomenclatura de eventos e traduzo dados em decisões.",
+  f_base:"Localização", f_lang:"Idiomas", f_lang_v:"Inglês · Português · Espanhol", f_edu:"Formação", f_edu_v:"Bacharel em Administração", f_work:"Modelo", f_work_v:"Remoto · Híbrido · Presencial",
+  impact_h:"Números que mudaram.", impact_p:"Resultados de otimizações guiadas por analytics em bancos, mídia e tecnologia.",
+  s1h:"Taxa de conversão", s1p:"Otimização de SEM com analytics do site · Banco BV",
+  s2h:"Geração de leads", s2p:"Liderando um time de analistas de marketing · Banco BV",
+  s3h:"Leads via inbound", s3p:"Estratégia de inbound marketing · Universo Online (UOL)",
+  s4h:"Anos", s4p:"em marketing digital, analytics e tracking",
+  proc_k:"Como eu trabalho", proc_h:"Da pergunta ao dashboard confiável.",
+  p1h:"Plano de mensuração", p1p:"Conecto objetivos de negócio a KPIs, eventos e parâmetros. Uma fonte única de verdade para marketing, produto e dev.",
+  p2h:"Arquitetura de eventos", p2p:"Nomenclatura padronizada e uma especificação de <code>dataLayer</code> limpa, documentada para desenvolvedores.",
+  p3h:"Implementação no GTM", p3p:"Tags, acionadores e variáveis para GA4, Google Ads, Meta Pixel e Hotjar, incluindo tracking de e-commerce.",
+  p4h:"QA e validação", p4p:"Debug em JavaScript, testes de disparo de tags e checagem de integridade antes de qualquer dado chegar ao relatório.",
+  p5h:"Dashboards e insights", p5p:"Relatórios em BigQuery, Looker Studio e Power BI com ROI, ROAS e CAC, e recomendações acionáveis.",
+  exp_h:"Onde eu entreguei.",
+  j1a:"Liderei implementações avançadas no Google Tag Manager para melhorar a precisão da mensuração e a performance de campanhas.",
+  j1b:"Implementei eventos personalizados e tracking de e-commerce no GA4 em toda a jornada do usuário.",
+  j1c:"Integrei Meta Pixel e Hotjar; entreguei recomendações estratégicas, apoio a experimentos e documentação de tracking considerando GDPR/CCPA.",
+  j2a:"Implementei frameworks avançados de tracking, eventos e conversões para monitorar comportamento e otimizar funis.",
+  j2b:"Gerenciei o deploy e o mapeamento de tags no GTM; corrigi problemas de tracking com testes rigorosos de integridade de dados.",
+  j2c:"Consultoria para times internos e clientes como Bradesco e Itaú; padronizei nomenclatura de eventos e documentação entre projetos.",
+  j3a:"Analisei dados do site e apoiei a otimização de SEM, contribuindo para um aumento de 25% na taxa de conversão.",
+  j3b:"Liderei um time de analistas de marketing e ajudei a gerar 30% mais leads.",
+  j3c:"Apoiei a configuração do Google Analytics e otimizei a estrutura de tags para relatórios mais precisos.",
+  j4a:"Responsável de ponta a ponta pela análise, mapeamento, implementação e testes de tracking via Google Tag Manager.",
+  j4b:"Configurei eventos personalizados e capturei dados estruturados via dataLayer; validei disparos de tags com debug.",
+  j4c:"Corrigi quedas de tráfego, implementei tracking de conversões e automatizei relatórios.",
+  j5a:"Defini e acompanhei KPIs e OKRs de marketing e growth.",
+  j5b:"Planejei e otimizei campanhas pagas e orgânicas em Google Ads e Meta Ads; estratégias de SEO/SEM e inbound.",
+  j5c:"Trabalhei com WooCommerce, RD Station, Google Merchant Center, Hotjar e GTM.",
+  j6a:"Otimizei Google AdWords, Google Analytics e fluxos de e-mail marketing.",
+  j6b:"Ajudei a aumentar a geração de leads em 30% com inbound marketing; gerenciei lances e execução de campanhas.",
+  skills_h:"O kit de ferramentas.", sk1:"Digital Analytics", sk2:"Relatórios e BI", sk3:"Marketing e Mídia", sk4:"Técnico", sk5:"Colaboração",
+  sk5a:"Documentação para devs", sk5b:"Comunicação com stakeholders",
+  e1k:"Bacharelado · 2009–2014", e1:"Administração de Empresas", e2k:"Curso avançado · 2018–2019", e2:"Inglês para Negócios", e3k:"Ensino médio · 2004–2007", e3:"High School Diploma",
+  c_h1:"Vamos medir", c_h2:"o que importa.",
+  c_p:"Contratando para digital analytics, tracking ou dados de marketing? Estou disponível para vagas CLT/PJ e projetos de consultoria.",
+  c_btn:"Me mande um e-mail →", c_cv_k:"Currículo", c_cv:"Baixar CV (PDF)"
+};
+const EN = {};
+document.querySelectorAll('[data-i18n]').forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
+let lang = 'en';
+function setLang(l){
+  lang = l; const dict = l === 'pt' ? PT : EN;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const v = dict[el.dataset.i18n]; if (v) el.innerHTML = v; });
+  document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  try { localStorage.setItem('lang', l); } catch(e){}
+  splitWords(); onScroll();
+}
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+/* word scrub for about paragraph */
+function splitWords(){
+  const p = document.getElementById('scrub');
+  p.innerHTML = p.textContent.split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+}
+
+/* reveal + counters */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.count').forEach(c => countUp(c));
+    io.unobserve(e.target);
+  });
+}, { threshold: .18, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.rv, .job, .stat').forEach(el => io.observe(el));
+function countUp(el){
+  const to = +el.dataset.to, pre = el.dataset.pre || '', t0 = performance.now(), d = 1600;
+  (function f(now){ const p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = pre + Math.round(to * e); if (p < 1) requestAnimationFrame(f); })(t0);
+}
+
+/* scroll-driven: progress, nav, word scrub, timeline rail, horizontal process */
+const prog = document.getElementById('progress'), nav = document.getElementById('nav');
+const pin = document.getElementById('pin'), track = document.getElementById('track');
+const tl = document.getElementById('timeline'), rail = document.getElementById('railfill');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function onScroll(){
+  const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+  prog.style.transform = `scaleX(${h ? y / h : 0})`;
+  nav.classList.toggle('scrolled', y > 20);
+  // word scrub
+  const p = document.getElementById('scrub'); const r = p.getBoundingClientRect();
+  const words = p.querySelectorAll('.w');
+  const k = Math.min(1, Math.max(0, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
+  const n = Math.round(k * words.length);
+  words.forEach((w, i) => w.classList.toggle('on', i < n || reduce));
+  // timeline
+  const tr = tl.getBoundingClientRect();
+  const tk = Math.min(1, Math.max(0, (innerHeight * .6 - tr.top) / tr.height));
+  rail.style.height = (tk * 100) + '%';
+  // horizontal process
+  if (!reduce) {
+    const pr = pin.getBoundingClientRect();
+    const span = pin.offsetHeight - innerHeight;
+    const pk = Math.min(1, Math.max(0, -pr.top / span));
+    const max = track.scrollWidth - innerWidth;
+    track.style.transform = `translateX(${-pk * Math.max(0, max)}px)`;
+  }
+}
+addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
+addEventListener('resize', onScroll);
+
+/* live dataLayer console */
+const con = document.getElementById('console');
+const evs = ["page_view","scroll_depth: 75%","view_item","add_to_cart","generate_lead","begin_checkout","purchase","form_submit","cta_click: 'hire_aglemon'"];
+let ei = 0;
+function pushEv(){
+  const t = new Date(); const ts = t.toTimeString().slice(0, 8);
+  const row = document.createElement('div'); row.className = 'row';
+  row.innerHTML = `<span style="color:#5D6773">${ts}</span><span class="ok">✓ fired</span><span class="ev">dataLayer.push({ event: ${evs[ei++ % evs.length]} })</span>`;
+  con.appendChild(row); while (con.children.length > 4) con.removeChild(con.firstChild);
+}
+pushEv(); pushEv(); setInterval(pushEv, 1600);
+
+/* replay */
+document.getElementById('replay').addEventListener('click', () => { const v = document.getElementById('reel'); v.currentTime = 0; v.play(); });
+
+/* init */
+let saved = null; try { saved = localStorage.getItem('lang'); } catch(e){}
+const initial = saved || ((navigator.language || '').toLowerCase().startsWith('pt') ? 'pt' : 'en');
+splitWords();
+if (initial === 'pt') setLang('pt');
+requestAnimationFrame(() => { document.body.classList.add('loaded'); onScroll(); });
+</script>
+</body>
+</html>
