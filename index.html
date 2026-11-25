@@ -152,13 +152,13 @@ h2{font-size:clamp(38px,5.2vw,72px);line-height:1;letter-spacing:-.04em;font-wei
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .skill{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--ink-2);transition:border-color .3s,transform .3s}
-.skill:hover{border-color:var(--lime);transform:translateY(-4px)}
+.skill:hover{border-color:#53616e;transform:translateY(-4px)}
 .skill.wide{grid-column:span 2}
 .skill h3{font-size:22px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .skill h3 .ico{width:36px;height:36px;border-radius:10px;background:var(--lime-dim);display:grid;place-items:center;color:var(--lime);font-family:var(--mono);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:15px}
-.chip.hot{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+.chip.hot{background:transparent;color:inherit;border-color:var(--line);font-weight:inherit}
 
 /* education */
 .edu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
