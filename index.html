@@ -152,13 +152,13 @@ h2{font-size:clamp(38px,5.2vw,72px);line-height:1;letter-spacing:-.04em;font-wei
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .skill{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--ink-2);transition:border-color .3s,transform .3s}
-.skill:hover{border-color:var(--lime);transform:translateY(-4px)}
+.skill:hover{border-color:#53616e;transform:translateY(-4px)}
 .skill.wide{grid-column:span 2}
 .skill h3{font-size:22px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .skill h3 .ico{width:36px;height:36px;border-radius:10px;background:var(--lime-dim);display:grid;place-items:center;color:var(--lime);font-family:var(--mono);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:15px}
-.chip.hot{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+.chip.hot{background:transparent;color:inherit;border-color:var(--line);font-weight:inherit}
 
 /* education */
 .edu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -198,6 +198,66 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   .process-pin{height:auto}.process-sticky{position:static;height:auto;padding:100px 0}
   .process-track{flex-wrap:wrap;padding-right:var(--pad)}
 }
+/* Premium MarTech preview */
+.hero{position:relative;isolation:isolate;min-height:90vh}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 78% 35%,rgba(200,255,61,.12),transparent 48%),radial-gradient(ellipse at 20% 80%,#14212c,transparent 55%)}
+.hero h1{font-size:clamp(48px,6.6vw,100px)}
+.btn-lime{box-shadow:0 8px 32px #c8ff3d25}
+.reel{box-shadow:0 24px 90px #0009,0 0 40px #c8ff3d12}
+.console{height:150px}.console:after{pointer-events:none}
+.console-label{font:11px var(--mono);color:var(--muted);margin-top:18px;letter-spacing:.08em}
+.lab,.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.lab-panel,.project-card{border:1px solid var(--line);border-radius:24px;padding:clamp(22px,4vw,40px);background:linear-gradient(145deg,#182129,#0d1218);overflow:hidden}
+.lab-panel h3,.project-card h3{font-size:28px;line-height:1.1;margin:16px 0}
+.lab-panel p,.project-card p{color:#b8c2cc}
+.lab-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.lab-actions button{cursor:pointer;background:var(--ink);color:var(--lime);font:13px var(--mono);border:1px solid var(--line);padding:12px;border-radius:10px}
+.lab-actions button:hover,.lab-actions button:focus-visible{border-color:var(--lime)}
+.lab-output{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.8 var(--mono);color:var(--lime);min-height:180px}
+.project-card{transition:transform .25s,border-color .25s}.project-card:hover{transform:translateY(-5px);border-color:var(--lime)}
+.project-art{height:150px;display:grid;place-items:center;border:1px solid var(--line);border-radius:16px;background:radial-gradient(ellipse,#c8ff3d18,transparent 70%),#090e13;font:clamp(20px,3vw,36px) var(--mono);color:var(--lime);margin-bottom:20px}
+.project-card a{display:inline-block;margin-top:20px;color:var(--lime)}
+@media(max-width:760px){.lab,.project-grid{grid-template-columns:1fr}.hero{padding-top:110px}.hero-grid{gap:32px}}
+@media(prefers-reduced-motion:reduce){.project-card:hover{transform:none}}
+/* Portrait and compact viewport layout */
+@media (max-width:980px), (orientation:portrait){
+.hero{min-height:0;padding:105px 0 44px}
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+section{padding:56px 0}
+.sec-head{gap:16px;margin-bottom:28px}
+.about-grid{gap:28px}
+.process{padding:56px 0}
+.process-pin{height:auto}
+.process-sticky{position:static;height:auto;display:block;overflow:visible}
+.process-head{margin-bottom:28px}
+.process-track{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding:0 var(--pad);transform:none!important;will-change:auto}
+.step{min-height:0;padding:24px}
+.step h3{margin:18px 0 12px;font-size:28px}
+.rv{opacity:1;transform:none}
+.about-big .w{opacity:1}
+.contact-grid{margin-top:30px}
+.contact{padding-bottom:48px}
+}
+@media(max-width:560px){
+:root{--pad:18px}
+nav .wrap{gap:8px;height:64px}
+.brand{gap:7px;font-size:15px}.brand img{width:30px;height:30px}
+.lang button{padding:5px 8px}
+.hero{padding:90px 0 36px}
+.hero h1{font-size:clamp(38px,10vw,56px)}
+.hero p.lead{margin:20px 0 24px}
+.eyebrow{margin-bottom:18px}.eyebrow .mono{font-size:11px}.live{flex-shrink:0}
+.hero-ctas{gap:8px}.hero-ctas .btn{padding:12px 16px;font-size:14px}
+section,.process{padding:42px 0}
+.lab,.project-grid{gap:12px}
+.lab-panel,.project-card,.skill,.stat{padding:20px;min-width:0}
+.lab-output{min-height:100px;font-size:12px}
+.lab-actions button{max-width:100%;overflow-wrap:anywhere}
+.console{height:112px;padding:10px;font-size:11px}
+.console .row{gap:6px}
+.timeline{padding-left:30px}.timeline .rail{left:5px}.job::before{left:-30px}.job{padding:24px 0}
+.contact h2{font-size:clamp(42px,12vw,70px)}
+}
 </style>
 </head>
 <body>
@@ -210,7 +270,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="#impact" data-i18n="nav_impact">Impact</a>
       <a href="#experience" data-i18n="nav_exp">Experience</a>
-      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a><a href="#skills" data-i18n="nav_skills">Skills</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -242,7 +302,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <div class="reel-tag"><span class="live" style="width:7px;height:7px"></span>SHOWREEL · 0:28</div>
         <button class="reel-sound" id="replay" data-i18n="replay">↺ Replay</button>
       </div>
-      <div class="console" id="console" aria-hidden="true"></div>
+      <div class="console-label" data-i18n="console_label">EVENT STREAM / SIMULATED</div><div class="console" id="console" aria-hidden="true"></div>
     </div>
   </div>
 </header>
@@ -254,7 +314,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   </div>
 </div>
 
-<section id="about">
+<section id="lab"><div class="wrap"><div class="sec-head"><h2><span class="mono" style="display:block;margin-bottom:18px">LIVE LAB / 01</span><span data-i18n="lab_title">Every click tells a story.</span></h2><p data-i18n="lab_desc">Try a local event simulation. No purchase or external analytics request is made.</p></div><div class="lab"><div class="lab-panel"><span class="mono lime">INTERACTIVE / GA4 + GTM</span><h3 data-i18n="lab_action">Trigger an event.</h3><p data-i18n="lab_explain">Explore structured event payloads in real time.</p><div class="lab-actions"><button data-demo="generate_lead">generate_lead</button><button data-demo="purchase">purchase</button><button data-demo="whatsapp_click">whatsapp_click</button><button data-demo="schedule_meeting">schedule_meeting</button></div></div><div class="lab-panel"><span class="mono">SANDBOX / dataLayer.js</span><pre class="lab-output" id="lab-output" aria-live="polite">dataLayer.push({ event: "demo_ready" });</pre></div></div></div></section>
+<section id="projects" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2><span class="mono" style="display:block;margin-bottom:18px">SELECTED WORK / 02</span><span data-i18n="projects_title">Beyond the dashboard.</span></h2><p data-i18n="projects_desc">Digital products connecting technology, marketing and business.</p></div><div class="project-grid">
+<article class="project-card"><div class="project-art" aria-hidden="true">⌖ SCOUTLY</div><span class="mono">SALES INTELLIGENCE</span><h3>Scoutly.pro</h3><p data-i18n="project1">Local business discovery and commercial intelligence.</p><a href="https://scoutly.pro/" target="_blank" rel="noopener noreferrer" data-i18n="visit_project">Explore project ↗</a></article>
+<article class="project-card"><div class="project-art" aria-hidden="true">))) NFC</div><span class="mono">CUSTOMER EXPERIENCE</span><h3>Avalia NFC</h3><p data-i18n="project2">Contactless technology for customer feedback and reviews.</p></article>
+<article class="project-card"><div class="project-art" aria-hidden="true">{ audit: true }</div><span class="mono">DATA QUALITY</span><h3>Data Trust Audit</h3><p data-i18n="project3">Website tracking and digital presence auditing.</p></article>
+<article class="project-card"><div class="project-art" aria-hidden="true">&lt;web /&gt;</div><span class="mono">WEB DEVELOPMENT</span><h3>Websites &amp; Apps</h3><p data-i18n="project4">Responsive digital experiences and business automation.</p><a href="https://magazinedasfabricas.com/" target="_blank" rel="noopener noreferrer" data-i18n="visit_project">Explore project ↗</a></article>
+</div></div></section><section id="about">
   <div class="wrap about-grid">
     <div>
       <div class="mono rv" style="margin-bottom:24px">01 — <span data-i18n="nav_about">About</span></div>
@@ -454,6 +520,7 @@ const PT = {
   c_p:"Contratando para digital analytics, tracking ou dados de marketing? Estou disponível para vagas CLT/PJ e projetos de consultoria.",
   c_btn:"Me mande um e-mail →", c_cv_k:"Currículo", c_cv:"Baixar CV (PDF)"
 };
+Object.assign(PT,{nav_projects:"Projetos",console_label:"FLUXO DE EVENTOS / SIMULADO",lab_title:"Cada clique conta uma história.",lab_desc:"Teste uma simulação local de eventos. Nenhuma compra ou requisição externa de analytics é realizada.",lab_action:"Dispare um evento.",lab_explain:"Explore parâmetros estruturados em tempo real.",projects_title:"Além dos dashboards.",projects_desc:"Produtos digitais que conectam tecnologia, marketing e negócios.",project1:"Prospecção de empresas locais e inteligência comercial.",project2:"Tecnologia por aproximação para feedback e avaliações de clientes.",project3:"Auditoria de tracking e presença digital de sites.",project4:"Experiências digitais responsivas e automação empresarial.",visit_project:"Explorar projeto ↗"});
 const EN = {};
 document.querySelectorAll('[data-i18n]').forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
 let lang = 'en';
@@ -509,13 +576,13 @@ function onScroll(){
   const tk = Math.min(1, Math.max(0, (innerHeight * .6 - tr.top) / tr.height));
   rail.style.height = (tk * 100) + '%';
   // horizontal process
-  if (!reduce) {
+  if (!reduce && !matchMedia('(max-width:980px), (orientation:portrait)').matches) {
     const pr = pin.getBoundingClientRect();
     const span = pin.offsetHeight - innerHeight;
     const pk = Math.min(1, Math.max(0, -pr.top / span));
     const max = track.scrollWidth - innerWidth;
     track.style.transform = `translateX(${-pk * Math.max(0, max)}px)`;
-  }
+  } else { track.style.transform = 'none'; }
 }
 addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
 addEventListener('resize', onScroll);
@@ -527,14 +594,26 @@ let ei = 0;
 function pushEv(){
   const t = new Date(); const ts = t.toTimeString().slice(0, 8);
   const row = document.createElement('div'); row.className = 'row';
-  row.innerHTML = `<span style="color:#5D6773">${ts}</span><span class="ok">✓ fired</span><span class="ev">dataLayer.push({ event: ${evs[ei++ % evs.length]} })</span>`;
+  row.innerHTML = `<span style="color:#5D6773">${ts}</span><span class="ok">✓ fired</span><span class="ev">dataLayer.push({ event: ${JSON.stringify(evs[ei++ % evs.length])} })</span>`;
   con.appendChild(row); while (con.children.length > 4) con.removeChild(con.firstChild);
 }
-pushEv(); pushEv(); setInterval(pushEv, 1600);
+pushEv(); pushEv(); if (!reduce) setInterval(pushEv, 1600);
 
 /* replay */
 document.getElementById('replay').addEventListener('click', () => { const v = document.getElementById('reel'); v.currentTime = 0; v.play(); });
 
+/* Local demo and actual portfolio interaction queue (no external tags configured). */
+window.dataLayer = window.dataLayer || [];
+document.querySelectorAll('[data-demo]').forEach(button=>button.addEventListener('click',()=>{
+ const payload={event:button.dataset.demo,source:"portfolio_demo",simulation:true};
+ document.getElementById('lab-output').textContent='dataLayer.push('+JSON.stringify(payload,null,2)+');';
+}));
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a');if(!a)return;
+ const href=a.getAttribute('href')||'';
+ const event=href.includes('.pdf')?'cv_download':href.startsWith('mailto:')?'contact_email_click':href.includes('wa.me')?'whatsapp_click':a.closest('#projects')?'project_click':a.closest('.hero-ctas')?'portfolio_cta_click':null;
+ if(event)window.dataLayer.push({event,link_path:href.split('?')[0].startsWith('mailto:')?'email':href.split('?')[0]});
+});
 /* init */
 let saved = null; try { saved = localStorage.getItem('lang'); } catch(e){}
 const initial = saved || ((navigator.language || '').toLowerCase().startsWith('pt') ? 'pt' : 'en');
